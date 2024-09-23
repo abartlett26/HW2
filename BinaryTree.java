@@ -224,19 +224,19 @@ public class BinaryTree {
         // if node is empty
         if (node == null) {
             // end recusion
-            return
+            return;
         }
         
         // if the value is the old value
-        if (node.value == oldVal) {
+        if (node.data == oldVal) {
             // replace with the new value
-            node.value = newVal;
+            node.data = newVal;
         }
 
         // to the left
-        replaceValueHelper(node.left, oldValue, newVal);
+        replaceValueHelper(node.left, oldVal, newVal);
         // to the right
-        replaceValueHelper(node.right, oldValue, newVal);
+        replaceValueHelper(node.right, oldVal, newVal);
         // (take it back now yall lol)
 
     }
@@ -260,7 +260,7 @@ public class BinaryTree {
         // if node is empty
         if (node == null) {
             // end recusion
-            return Integer.MAX_VALUE
+            return Integer.MAX_VALUE;
         }
 
         // to the left
@@ -270,7 +270,7 @@ public class BinaryTree {
         // (take it back now yall lol)
 
         // compare current val with the left val and the right val
-        ultMin = Math.min(node.value, Math.min(leftMin, rightMin));
+        int ultMin = Math.min(node.data, Math.min(leftMin, rightMin));
 
         return ultMin;
     }
@@ -304,7 +304,7 @@ public class BinaryTree {
         // (take it back now yall lol)
 
         int count = 0;
-        if (node.value > val) {
+        if (node.data > val) {
             count = 1;
         } else {
             count = 0;
@@ -358,8 +358,8 @@ public class BinaryTree {
         // (take it back now yall lol)
 
         
-        int sum = n.value + leftCount[0] + rightCount[0];
-        int count = 1 + leftResult[1] + rightResult[1];
+        int sum = n.data + left[0] + right[0];
+        int count = 1 + left[1] + right[1];
 
         return new int[]{sum, count};
     }
